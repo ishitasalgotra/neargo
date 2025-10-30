@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MapPin, Clock, Shield, Zap } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import heroImage from "@/assets/hero-image.jpg";
 
 const Index = () => {
+  const navigate = useNavigate(); // ✅ navigation hook
+
   return (
     <div className="min-h-screen">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4">
         <div className="container mx-auto">
@@ -26,26 +28,35 @@ const Index = () => {
                   Connect with nearby drivers for short, affordable rides from metro or bus stops to your final destination. Quick, easy, and always nearby.
                 </p>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/rider">
                   <Button size="lg" variant="hero" className="w-full sm:w-auto">
                     Book a Ride
                   </Button>
                 </Link>
+
                 <Link to="/driver">
                   <Button size="lg" variant="secondary" className="w-full sm:w-auto">
                     Become a Driver
                   </Button>
                 </Link>
+
+                {/* ✅ Share a Ride Button */}
+                <button
+                  onClick={() => navigate("/share-ride")}
+                  className="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 transition-all"
+                >
+                  Share a Ride (Split Fare)
+                </button>
               </div>
             </div>
 
             <div className="relative animate-scale-in">
               <div className="absolute inset-0 bg-gradient-hero opacity-20 blur-3xl rounded-full" />
-              <img 
+              <img
                 src={heroImage}
-                alt="NearGo ride sharing illustration" 
+                alt="NearGo ride sharing illustration"
                 className="relative rounded-2xl shadow-float floating"
               />
             </div>
@@ -89,7 +100,11 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {steps.map((step, index) => (
-              <div key={index} className="text-center space-y-4 animate-fade-in" style={{ animationDelay: `${index * 150}ms` }}>
+              <div
+                key={index}
+                className="text-center space-y-4 animate-fade-in"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
                 <div className="bg-gradient-hero text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto shadow-float">
                   {index + 1}
                 </div>
@@ -134,41 +149,16 @@ const Index = () => {
 };
 
 const features = [
-  {
-    icon: Zap,
-    title: "Instant Matching",
-    description: "Get connected with nearby drivers in seconds"
-  },
-  {
-    icon: MapPin,
-    title: "Short Rides",
-    description: "Perfect for 1-5 km trips from transit stops"
-  },
-  {
-    icon: Clock,
-    title: "Save Time",
-    description: "No more waiting for buses or long walks"
-  },
-  {
-    icon: Shield,
-    title: "Safe & Secure",
-    description: "Verified drivers and real-time tracking"
-  }
+  { icon: Zap, title: "Instant Matching", description: "Get connected with nearby drivers in seconds" },
+  { icon: MapPin, title: "Short Rides", description: "Perfect for 1-5 km trips from transit stops" },
+  { icon: Clock, title: "Save Time", description: "No more waiting for buses or long walks" },
+  { icon: Shield, title: "Safe & Secure", description: "Verified drivers and real-time tracking" }
 ];
 
 const steps = [
-  {
-    title: "Request a Ride",
-    description: "Enter your pickup and destination points"
-  },
-  {
-    title: "Get Matched",
-    description: "We'll find the nearest available driver"
-  },
-  {
-    title: "Reach Your Goal",
-    description: "Track your ride and arrive safely"
-  }
+  { title: "Request a Ride", description: "Enter your pickup and destination points" },
+  { title: "Get Matched", description: "We'll find the nearest available driver" },
+  { title: "Reach Your Goal", description: "Track your ride and arrive safely" }
 ];
 
 export default Index;
