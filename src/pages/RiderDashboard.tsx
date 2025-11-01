@@ -14,29 +14,52 @@ const RiderDashboard = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [rideStatus, setRideStatus] = useState<'idle' | 'searching' | 'found' | 'active'>('idle');
 
-  const handleBookRide = () => {
-    if (!pickup || !destination) {
-      toast({
-        title: "Missing information",
-        description: "Please enter both pickup and destination",
-        variant: "destructive"
-      });
-      return;
-    }
+ const handleBookRide = async () => {
+  if (!pickup || !destination) {
+    toast({
+      title: "Missing information",
+      description: "Please enter both pickup and destination",
+      variant: "destructive"
+    });
+    return;
+  }
 
-    setIsSearching(true);
-    setRideStatus('searching');
+  setIsSearching(true);
+  setRideStatus("searching");
 
-    // Simulate finding a driver
+  try {
+    const res = await fetch("http://localhost:5000/api/rides", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        riderName: "Ishita", // you can later replace this with logged-in user
+        pickup,
+        destination,
+        mode: "ride"
+      })
+    });
+
+    const data = await res.json();
+    console.log("✅ Ride Created:", data);
+
+    // simulate found driver
     setTimeout(() => {
       setIsSearching(false);
-      setRideStatus('found');
+      setRideStatus("found");
       toast({
         title: "Driver Found! 🎉",
         description: "Your driver is on the way",
       });
     }, 2000);
-  };
+  } catch (error) {
+    console.error("❌ Error booking ride:", error);
+    toast({
+      title: "Error",
+      description: "Could not book ride. Try again later.",
+      variant: "destructive",
+    });
+  }
+};
 
   const markers = rideStatus !== 'idle' ? [
     { position: [28.6139, 77.2090] as [number, number], popup: "Pickup Location" },

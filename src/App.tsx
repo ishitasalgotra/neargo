@@ -9,6 +9,10 @@ import DriverDashboard from "./pages/DriverDashboard";
 import ShareRide from "./pages/ShareRide";
 import NotFound from "./pages/NotFound";
 
+// 👇 ADD THESE
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -18,11 +22,17 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          {/* AUTH ROUTES */}
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+
+          {/* MAIN APP ROUTES */}
           <Route path="/" element={<Index />} />
           <Route path="/rider" element={<RiderDashboard />} />
           <Route path="/driver" element={<DriverDashboard />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="/share-ride" element={<ShareRide />} /> {/* ← NEW ROUTE */}
+          <Route path="/share-ride" element={<ShareRide />} />
+
+          {/* CATCH-ALL */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
