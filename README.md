@@ -1,73 +1,154 @@
-# Welcome to your Lovable project
+# 🚀 NearGO – Last-Mile Shared Mobility Platform
 
-## Project info
+NearGO is a full-stack ride-sharing platform designed to make **last-mile transportation affordable, convenient, and sustainable**. The platform enables users to book shared auto and e-rickshaw rides, split fares with fellow commuters, and track rides in real time.
 
-**URL**: https://lovable.dev/projects/64fffa71-5c59-4c73-bab8-083ad18f2338
+---
 
-## How can I edit this code?
+## ✨ Features
 
-There are several ways of editing your application.
+* 🚖 Shared ride booking
+* 👥 Smart ride pooling
+* 💰 Automatic fare splitting
+* 📍 Real-time ride tracking
+* 🔐 Secure user authentication
+* 👤 Rider & Driver dashboards
+* 📜 Booking history
+* 📱 Responsive UI
+* ⚡ Fast and scalable REST APIs
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/64fffa71-5c59-4c73-bab8-083ad18f2338) and start prompting.
+## 🏗️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+### Frontend
 
-**Use your preferred IDE**
+* React.js
+* TypeScript
+* Vite
+* Tailwind CSS
+* shadcn/ui
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Backend
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+* Node.js
+* Express.js
+* MongoDB
+* JWT Authentication
 
-Follow these steps:
+### Tools
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+* Git
+* GitHub
+* Postman
+* Render
+* Vercel
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 📂 Project Structure
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```text
+NearGO/
+│
+├── src/                # React application
+├── public/             # Static assets
+├── server/             # Backend APIs (if applicable)
+├── components/         # Reusable UI components
+├── pages/              # Application pages
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+└── README.md
+```
+
+---
+
+## 🚀 Getting Started
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/ishitasalgotra/neargo.git
+
+cd neargo
+```
+
+---
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+### Start Development Server
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will start on:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```text
+http://localhost:5173
+```
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🎯 Problem Statement
 
-## What technologies are used for this project?
+Students and daily commuters often face challenges with last-mile transportation due to:
 
-This project is built with:
+* High travel costs
+* Limited ride availability
+* Inefficient individual bookings
+* Lack of affordable shared mobility options
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+NearGO addresses these issues by enabling commuters traveling in similar directions to share rides and split fares.
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/64fffa71-5c59-4c73-bab8-083ad18f2338) and click on Share -> Publish.
+## 👥 Target Users
 
-## Can I connect a custom domain to my Lovable project?
+* Students
+* Office commuters
+* Daily travelers
+* Local residents seeking affordable transportation
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 💡 Key Functionalities
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+* User Registration & Login
+* Ride Booking
+* Ride Pooling
+* Live Ride Tracking
+* Fare Splitting
+* Driver Dashboard
+* Rider Dashboard
+* Booking History
+* Responsive User Interface
+
+---
+
+## 📈 Future Enhancements
+
+* Google Maps route optimization
+* In-app payments
+* Push notifications
+* Ratings & Reviews
+* Ride scheduling
+* AI-based ride matching
+* Admin dashboard
+* Mobile application
+
+---
+
+## 👩‍💻 Author
+
+**Ishita Salgotra**
+
+* GitHub: https://github.com/ishitasalgotra
+* LinkedIn: https://linkedin.com/in/ishitasalgotra05
+
